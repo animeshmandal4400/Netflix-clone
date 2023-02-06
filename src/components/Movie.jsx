@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 const movie = ({item}) => {
-    const [wishlist, setWishlist] = useState(true);
+    const [wishlist, setWishlist] = useState(false);
   return (
     <div>
         <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block relative p-2 shadow-xl'>
