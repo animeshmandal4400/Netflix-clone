@@ -6,10 +6,9 @@ const Home = () => {
   return (
     <>
         <Hero/>
-        <Row title="Upcoming" fetchUrl={Requests.requestUpcoming} />
-        <Row title="latest" fetchUrl={Requests.requestLatest} />
-        <Row title="topRated" fetchUrl={Requests.requestTopRated} />
-        <Row title="Trending" fetchUrl={Requests.requestTrending} />
+        <Row title="Upcoming" rowID="1" fetchUrl={Requests.requestUpcoming} />
+        <Row title="Top Rated" rowID="2" fetchUrl={Requests.requestTopRated} />
+        <Row title="Trending" rowID="3" fetchUrl={Requests.requestTrending} />
 
     </>
   )
