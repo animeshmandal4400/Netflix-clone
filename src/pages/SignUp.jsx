@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword ] = useState("")
+  const [error, setError] =useState()
   const {user, signUp} = UserAuth()
   const navigate = useNavigate()
   const handleSubmit = async(e) => {
@@ -12,9 +13,11 @@ const SignUp = () => {
     try {
       await signUp(email,password)
       navigate('/')
+      setError('')
     }
     catch(error) {
-      alert(error)
+      console.log(error)
+      setError(error.message)
     }
   }
   return (
@@ -29,6 +32,7 @@ const SignUp = () => {
                 <p className='md:text-3xl text-xl my-5 font-semibold'>Watch anywhere. Cancel anytime.</p>
                 <p className='md:text-xl text-sm font-normal my-5'>Ready to watch? Enter your email to create or restart your membership.</p>
               </div>
+              {error ? <p className='bg-red-300 p-2 mb-2'>{error}</p> : null}
               <form onSubmit={handleSubmit} className='grid sm:grid-cols-3 gap-2 text-black'>
                 <input onChange={(e) => setEmail(e.target.value)} className=' sm:h-14 h-8 p-4 w-[100%]' placeholder='Email address' type='email'></input>
                 <input onChange={(e) => setPassword(e.target.value)} className=' sm:h-14 h-8 p-4 w-[100%]' placeholder='Password' type='password'></input>

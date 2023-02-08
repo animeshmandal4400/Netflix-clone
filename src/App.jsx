@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
 import Account from './pages/Account'
+import ProtectedRoute from './components/ProtectedRoute'
 function App() {
 
   return (
