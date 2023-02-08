@@ -27,12 +27,12 @@ export function AuthContextProvider({ children }) {
   }; 
   });
   return (
-  <AuthContext.Provider value={{signUp, user, logIn, signOut}}>
+  <AuthContext.Provider value={{signUp, user, logIn, logOut}}>
     {children}
   </AuthContext.Provider>
     );
 }
 
-export function UseAuth() {
+export function UserAuth() {
   return useContext(AuthContext);
 }

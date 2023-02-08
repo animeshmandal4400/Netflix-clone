@@ -23,7 +23,7 @@ const Row = ({title,fetchUrl, rowID}) => {
     <>
     <h2 className='text-white font-bold text-xl p-4'>{title}</h2>
     <div className='relative flex items-center group'>
-        <BsChevronLeft onClick={leftSlide} className= 'hidden bg-white border rounded-full opacity-30 hover:opacity-80 p-1 m-1 z-40 absolute group-hover:block' size={30}/>
+        <BsChevronLeft onClick={leftSlide} className= 'hidden bg-white rounded-full opacity-30 hover:opacity-80 p-1 m-1 z-40 absolute group-hover:block' size={30}/>
         <div id={'slider' +rowID} className='flex w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative '>
             {movies?.map((item,id) => (
             <Movie key={id} item={item} />
