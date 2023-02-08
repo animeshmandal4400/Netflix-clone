@@ -5,6 +5,7 @@ import { doc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { UserAuth } from '../context/AuthContext';
 
 const movie = ({item}) => {
+
     const [wishlist, setWishlist] = useState(false);
     const [saved, setSaved] = useState(false);
     const {user} = UserAuth();
